@@ -17,9 +17,12 @@
 
 # -- Project information -----------------------------------------------------
 
-project = 'No Errors Test Project'
-copyright = '2019, sphinx-action Test Suite'
-author = 'sphinx-action Test Suite'
+project = 'Computer Based Problem Solving'
+copyright = '2020, Patrick Coxall'
+author = 'Patrick Coxall'
+
+# The full version, including alpha/beta/rc tags
+release = '1.0.1'
 
 
 # -- General configuration ---------------------------------------------------
@@ -27,7 +30,7 @@ author = 'sphinx-action Test Suite'
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
-extensions = [
+extensions = ['sphinx_tabs.tabs'
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -44,11 +47,19 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
-html_theme = 'alabaster'
+#html_theme = 'alabaster'
+html_theme = 'sphinx_rtd_theme'
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
 
-master_doc = 'index'
+# The name of an image file (relative to this directory) to place at the top
+# of the sidebar.
+html_logo = "images/cs-logo.png"
+
+# added this to make the standard Read the Docs layout
+#   not be constrained in the width
+def setup(app):
+    app.add_stylesheet('my_theme.css')
